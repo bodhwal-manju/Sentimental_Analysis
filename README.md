@@ -16,6 +16,7 @@ This project is a web application that performs sentiment analysis on IMDB movie
 <img src='https://github.com/bodhwal-manju/Sentimental_Analysis/blob/main/project_photo/Screenshot%202024-08-27%20161409.png'/>
 <img src="https://github.com/bodhwal-manju/Sentimental_Analysis/blob/main/project_photo/Screenshot%202024-08-27%20161433.png"/>
 <img src="https://github.com/bodhwal-manju/Sentimental_Analysis/blob/main/project_photo/Screenshot%202024-08-27%20161540.png"/>
+<img src="https://github.com/bodhwal-manju/Sentimental_Analysis/blob/main/project_photo/Screenshot%202024-08-27%20161632.png"/>
 <img src="https://github.com/bodhwal-manju/Sentimental_Analysis/blob/main/project_photo/Screenshot%202024-08-27%20161643.png"/>
 
 <h2>🚀 Demo</h2>
