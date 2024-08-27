@@ -21,7 +21,7 @@ This project is a web application that performs sentiment analysis on IMDB movie
 
 <h2>🚀 Demo</h2>
 
-[https://drive.google.com/file/d/1pUieaDNDAqpWPLZwE7xhyflvdTC3HWIa/view?usp=drive_link](https://drive.google.com/file/d/1pUieaDNDAqpWPLZwE7xhyflvdTC3HWIa/view?usp=drive_link)
+[https://drive.google.com/file/d/1cGB2hZKOJBVS0avi7S2fOVGizHZTjOI3/view?usp=drive_link](https://drive.google.com/file/d/1cGB2hZKOJBVS0avi7S2fOVGizHZTjOI3/view?usp=drive_link)
 
 <h2>Technical Aspects</h2>
     <ul>
