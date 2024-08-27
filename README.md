@@ -34,7 +34,7 @@ This project is a web application that performs sentiment analysis on IMDB movie
 <p>1. Clone this repository</p>
 
 ```
-https://github.com/bodhwal-manju/VidNotes_AI.git
+https://github.com/bodhwal-manju/Sentimental_Analysis.git
 ```
 
 <p>2. Navigate to the project directory:</p>
