@@ -33,7 +33,7 @@ https://github.com/bodhwal-manju/VidNotes_AI.git
 <p>2. Navigate to the project directory:</p>
 
 ```
-cd VidNotes_AI
+cd Sentimental_Analysis
 ```
 
 <p>3. Create Virtual Environment(Using venv (Python 3 built-in module))</p>
@@ -58,15 +58,13 @@ pip install -r requirements.txt
         <li><strong>Run the Streamlit application:</strong>
             <pre><code>streamlit run app.py</code></pre>
         </li>
-        <li><strong>Input YouTube Video URL:</strong>
-            <p>Open your web browser and navigate to the provided local URL. Enter the YouTube video URL in the input field.</p>
+        <li><strong>Input Review:</strong>
+            <p>Open your web browser and navigate to the provided local URL. Enter the Review.</p>
         </li>
-        <li><strong>Generate and Download Notes:</strong>
-            <p>Click on the "Generate Notes" button to get the detailed transcript. Use the "Download Notes" button to download the notes.</p>
+        <li><strong>Result:</strong>
+            <p>Click on the "Classify" button to get the classification Result. Use the "close Results" button to re-enter the new review</p>
         </li>
     </ol>
-<h2> LinkedIn Post</h2>
-[https://www.linkedin.com/feed/update/urn:li:activity:7162111144508280832/]
 
 
    
