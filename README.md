@@ -11,6 +11,11 @@ This project is a web application that performs sentiment analysis on IMDB movie
         <li><strong>Visual Feedback:</strong> The application uses colorful floating balloons to create an engaging and interactive user experience. </li>
          <li><strong>Analysis Results Display:</strong>The sentiment and potentially a confidence score are displayed in a green or red box at the bottom of the interface depending on the score..
     </ul>
+<h2>Project Screenshots:</h2>
+
+<img src="project_photos/WhatsApp Image 2024-02-07 at 17.31.47_c98e8628.jpg" alt="project-screenshot"/>
+<img src="project_photos/WhatsApp%20Image%202024-02-07%20at%2019.03.54_413d06cb.jpg">
+<img src="project_photos/WhatsApp%20Image%202024-02-07%20at%2019.04.55_6935baeb.jpg">
 
 <h2>🚀 Demo</h2>
 
