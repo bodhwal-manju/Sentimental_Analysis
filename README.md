@@ -63,7 +63,7 @@ pip install -r requirements.txt
 <h2>Usage</h2>
     <ol>
         <li><strong>Run the Streamlit application:</strong>
-            <pre><code>streamlit run app.py</code></pre>
+            <pre><code>streamlit run main.py</code></pre>
         </li>
         <li><strong>Input Review:</strong>
             <p>Open your web browser and navigate to the provided local URL. Enter the Review.</p>
