@@ -1,6 +1,7 @@
 import numpy as np
 import base64
 import streamlit as st
+import os
 
 # Try to import TensorFlow and load model with error handling
 try:
@@ -9,16 +10,49 @@ try:
     from tensorflow.keras.preprocessing import sequence 
     from tensorflow.keras.models import load_model
     
-    word_index=imdb.get_word_index()
-    reverse_word_index={value:key for key ,value in word_index.items()}
-    model=load_model('simple_rnn_imdb.h5')
-    TENSORFLOW_AVAILABLE = True
+    # Load the IMDB word index
+    try:
+        word_index=imdb.get_word_index()
+        reverse_word_index={value:key for key ,value in word_index.items()}
+        st.info("✅ Using official IMDB word index")
+    except Exception as e:
+        # Fallback to simplified word index
+        st.warning("Could not download IMDB word index. Using simplified offline version.")
+        try:
+            import pickle
+            with open('simple_word_index.pkl', 'rb') as f:
+                word_index = pickle.load(f)
+            reverse_word_index = {value: key for key, value in word_index.items()}
+            st.info("✅ Using simplified word index")
+        except Exception as e2:
+            st.error(f"Could not load word index: {e2}")
+            word_index = {}
+            reverse_word_index = {}
+    
+    # Try to load the model with compatibility handling
+    try:
+        # Try to load the fixed model first
+        if os.path.exists('simple_rnn_imdb_fixed.h5'):
+            model=load_model('simple_rnn_imdb_fixed.h5')
+            st.success("✅ Using compatible model version!")
+        else:
+            model=load_model('simple_rnn_imdb.h5')
+        TENSORFLOW_AVAILABLE = True
+        MODEL_LOADED = True
+    except Exception as model_error:
+        st.warning(f"Model loading error: {model_error}")
+        st.info("This appears to be a model compatibility issue. The model was trained with an older version of TensorFlow.")
+        TENSORFLOW_AVAILABLE = True
+        MODEL_LOADED = False
+        
 except ImportError as e:
     st.error(f"TensorFlow not available: {e}")
     TENSORFLOW_AVAILABLE = False
+    MODEL_LOADED = False
 except Exception as e:
-    st.error(f"Error loading model: {e}")
+    st.error(f"Error setting up TensorFlow: {e}")
     TENSORFLOW_AVAILABLE = False
+    MODEL_LOADED = False
 
 def decode_review(encoded_review):
     if TENSORFLOW_AVAILABLE:
@@ -86,11 +120,19 @@ user_input=st.text_area('')
 
 if st.button('Classify'):
     if user_input.strip():
-        if TENSORFLOW_AVAILABLE:
+        if TENSORFLOW_AVAILABLE and MODEL_LOADED:
             preprocessed_input=preprocess_text(user_input)
             prediction=model.predict(preprocessed_input)
             sentiment='Positive' if prediction[0][0]>0.5 else 'Negative'
             prediction_score = prediction[0][0]
+        elif TENSORFLOW_AVAILABLE:
+            # TensorFlow is available but model failed to load
+            st.error("Model could not be loaded due to compatibility issues. This may be due to version differences.")
+            # Mock prediction for demo
+            import random
+            prediction_score = random.random()
+            sentiment = 'Positive' if prediction_score > 0.5 else 'Negative'
+            st.warning("Showing demo prediction instead of actual model prediction.")
         else:
             # Mock prediction when TensorFlow is not available
             st.warning("TensorFlow is not available. Showing demo functionality.")
