@@ -116,7 +116,7 @@ st.markdown('<h1 class="white-text">IMDB Movie Review Sentimental Analysis</h1>'
 
 # Rest of your code continues here...
 st.markdown('<h4 class="white-text">Enter a Movie Review to classify it as positive or Negative</h4>', unsafe_allow_html=True)
-user_input=st.text_area('')
+user_input=st.text_area('Enter your movie review here:', placeholder="Type your movie review here...")
 
 if st.button('Classify'):
     if user_input.strip():
